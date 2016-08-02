@@ -12,4 +12,5 @@ ENV AUTHORIZED_KEYS **None**
 
 EXPOSE 22
 ENTRYPOINT ["/run.sh",""]
+WORKDIR /app
 #CMD ["/run.sh"]
