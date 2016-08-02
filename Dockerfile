@@ -10,7 +10,8 @@ RUN chmod +x /*.sh
 
 ENV AUTHORIZED_KEYS **None**
 
+WORKDIR /app
 EXPOSE 22
 ENTRYPOINT ["/run.sh",""]
-WORKDIR /app
+
 #CMD ["/run.sh"]
