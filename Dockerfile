@@ -15,7 +15,10 @@ RUN 	mkdir -p /var/run/sshd &&  \
 	apt-get install -y locales && \
 	locale-gen zh_TW.UTF-8 && \
 	DEBIAN_FRONTEND=noninteractive dpkg-reconfigure locales && \ 
-	locale-gen zh_TW.UTF-8  
+	locale-gen zh_TW.UTF-8 && \
+	echo "export LANG=zh_TW.UTF-8" >> /root/.profile && \ 
+	echo "export LANGUAGE=zh_TW" >> /root/.profile && \
+	echo "export LC_ALL=zh_TW.UTF-8" >> /root/.profile
 
 ENV LANG zh_TW.UTF-8  
 ENV LANGUAGE zh_TW
