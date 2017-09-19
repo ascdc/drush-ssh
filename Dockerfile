@@ -5,8 +5,8 @@ FROM drush/drush
 ADD locale.gen /etc/locale.gen
 ADD locale-archive /usr/lib/locale/locale-archive	
 	 
-RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get -y install openssh-server pwgen vim
-RUN 	mkdir -p /var/run/sshd &&  \
+RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get -y install openssh-server pwgen vim wget curl screen sudo
+RUN mkdir -p /var/run/sshd &&  \
 	sed -i "s/UsePrivilegeSeparation.*/UsePrivilegeSeparation no/g" /etc/ssh/sshd_config && \
 	sed -i "s/UsePAM.*/UsePAM no/g" /etc/ssh/sshd_config && \
 	sed -i "s/PermitRootLogin.*/PermitRootLogin yes/g" /etc/ssh/sshd_config && \
