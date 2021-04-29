@@ -6,7 +6,7 @@ echo "tzdata tzdata/Zones/Asia select Taipei" | debconf-set-selections && \
 echo "locales locales/default_environment_locale select zh_TW.UTF-8" | debconf-set-selections && \
 echo "locales locales/locales_to_be_generated multiselect zh_TW.UTF-8 UTF-8" | debconf-set-selections && \
 apt-get update && DEBIAN_FRONTEND=noninteractive apt-get -y install openssh-server pwgen vim wget curl screen sudo && \
-apt-get -y install jq git apt-utils software-properties-common sudo tzdata locales language-pack-zh-hant language-pack-zh-hant-base apt-transport-https ca-certificates gnupg-agent build-essential pkg-config libmagickwand-dev gcc-multilib dkms make gcc g++ && \
+apt-get -y install jq git apt-utils software-properties-common sudo cron tzdata locales language-pack-zh-hant language-pack-zh-hant-base apt-transport-https ca-certificates gnupg-agent build-essential pkg-config libmagickwand-dev gcc-multilib dkms make gcc g++ && \
 ln -fs /usr/share/zoneinfo/Asia/Taipei /etc/localtime && \
 dpkg-reconfigure --frontend noninteractive tzdata && \
 rm -f "/etc/locale.gen" && \
