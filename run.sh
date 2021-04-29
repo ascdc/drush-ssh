@@ -24,5 +24,3 @@ if [ ! -f /.root_pw_set ]; then
 fi
 
 /etc/init.d/ssh start
-
-exec /usr/sbin/sshd -D
