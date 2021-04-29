@@ -28,7 +28,8 @@ php composer-setup.php && \
 php -r "unlink('composer-setup.php');" && \
 mv composer.phar /usr/local/bin/composer && \
 composer global require drush/drush:8.4.8 --prefer-dist && \
-echo "export PATH=$HOME/.config/composer/vendor/bin:$PATH" >> ~/.bashrc 
+echo "export PATH=$HOME/.config/composer/vendor/bin:$PATH" >> ~/.bashrc && \
+service ssh start
 
 ENV LANG zh_TW.UTF-8  
 ENV LANGUAGE zh_TW
