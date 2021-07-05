@@ -30,6 +30,7 @@ php -r "unlink('composer-setup.php');" && \
 mv composer.phar /usr/local/bin/composer && \
 composer global require drush/drush:8.4.8 --prefer-dist && \
 echo "export PATH=$HOME/.config/composer/vendor/bin:$PATH" >> ~/.bashrc && \
+sed -i "s/.*PermitRootLogin.*/PermitRootLogin yes/g" /etc/ssh/sshd_config && \
 service ssh start
 
 ENV LANG zh_TW.UTF-8  
