@@ -22,6 +22,7 @@ apt-get update && \
 apt-get install -y php7.4 php7.4-common php7.4-json php7.4-opcache php-uploadprogress php-memcache php7.4-zip php7.4-mysql php7.4-phpdbg php7.4-gd php7.4-imap php7.4-ldap php7.4-pgsql php7.4-pspell php7.4-tidy php7.4-dev php7.4-intl php7.4-curl php7.4-xmlrpc php7.4-xsl php7.4-bz2 php7.4-mbstring imagemagick mysql-client && \
 echo 'autodetect'|pecl install imagick && \
 echo "extension=imagick.so" | tee /etc/php/7.4/mods-available/imagick.ini && \
+ln -sf /etc/php/7.4/mods-available/imagick.ini /etc/php/7.4/cli/conf.d/20-imagick.ini && \
 php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" && \
 php -r "if (hash_file('sha384', 'composer-setup.php') === '756890a4488ce9024fc62c56153228907f1545c228516cbf63f885e036d37e9a59d27d63f46af1d4d07ee0f76181c7d3') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;" && \
 php composer-setup.php && \
