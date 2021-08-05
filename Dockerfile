@@ -29,7 +29,9 @@ php composer-setup.php && \
 php -r "unlink('composer-setup.php');" && \
 mv composer.phar /usr/local/bin/composer && \
 composer global require drush/drush:8.4.8 --prefer-dist && \
-echo "export PATH=$HOME/.config/composer/vendor/bin:$PATH" >> ~/.bashrc && \
+mv ~/.config/composer /etc/ && \
+cd /usr/local/bin/ && \
+ln -s /etc/composer/vendor/bin/drush && \
 sed -i "s/.*PermitRootLogin.*/PermitRootLogin yes/g" /etc/ssh/sshd_config && \
 sed -i "s/.*www-data.*/www-data:x:33:33:www-data:\/var\/www:\/bin\/bash/g" /etc/passwd && \
 service ssh start
